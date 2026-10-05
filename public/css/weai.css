@@ -1,0 +1,314 @@
+.weai-launcher {
+    color: #5741c8;
+}
+
+.weai-launcher .ico {
+    color: #7048e8;
+}
+
+.weai-toolbar-button {
+    width: auto !important;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #6043d5 !important;
+    font-size: 12px !important;
+    font-weight: 800;
+}
+
+.weai-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: none;
+    background: rgb(6 20 45 / 38%);
+    backdrop-filter: blur(3px);
+}
+
+.weai-backdrop.open {
+    display: block;
+}
+
+.weai-panel {
+    position: fixed;
+    z-index: 41;
+    right: 24px;
+    bottom: 24px;
+    display: none;
+    width: min(440px, calc(100vw - 32px));
+    height: min(680px, calc(100dvh - 48px));
+    min-height: 430px;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid #e0e5f0;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 28px 90px rgb(11 24 57 / 28%);
+    color: #091735;
+}
+
+.weai-panel.open {
+    display: flex;
+    animation: weai-rise 180ms ease-out both;
+}
+
+@keyframes weai-rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weai-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 18px;
+    border-bottom: 1px solid #e9edf5;
+    background: linear-gradient(120deg, #f8f7ff, #f3f8ff 62%, #fff);
+}
+
+.weai-brand {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    flex: none;
+    place-items: center;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #8152ee, #436ee8);
+    box-shadow: 0 6px 16px rgb(92 77 208 / 22%);
+    color: #fff;
+    font-size: 22px;
+}
+
+.weai-heading {
+    min-width: 0;
+}
+
+.weai-heading h2 {
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: -.2px;
+}
+
+.weai-heading p {
+    margin: 4px 0 0;
+    color: #72809a;
+    font-size: 11px;
+}
+
+.weai-close {
+    display: grid;
+    width: 35px;
+    height: 35px;
+    flex: none;
+    margin-left: auto;
+    place-items: center;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #66738c;
+    font-size: 19px;
+}
+
+.weai-close:hover,
+.weai-close:focus-visible {
+    background: #e9edf7;
+    color: #202c45;
+}
+
+.weai-privacy {
+    margin: 0;
+    padding: 9px 17px;
+    border-bottom: 1px solid #eef1f6;
+    background: #fcfcff;
+    color: #748099;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.weai-thread {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    padding: 18px;
+    overscroll-behavior: contain;
+}
+
+.weai-message {
+    display: flex;
+    max-width: 93%;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.weai-message-user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.weai-avatar {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: none;
+    place-items: center;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #8152ee, #436ee8);
+    color: #fff;
+    font-size: 17px;
+}
+
+.weai-message-user .weai-avatar {
+    border-radius: 50%;
+    background: #e9effb;
+    color: #465779;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.weai-bubble {
+    max-width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #ebedf5;
+    border-radius: 4px 15px 15px;
+    background: #f7f8fc;
+    color: #283650;
+    font-size: 12px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.weai-message-user .weai-bubble {
+    border-color: #e5eafe;
+    border-radius: 15px 4px 15px 15px;
+    background: #edf2ff;
+}
+
+.weai-error .weai-bubble {
+    border-color: #f4d6d8;
+    background: #fff6f6;
+    color: #a02d38;
+}
+
+.weai-loading .weai-bubble {
+    color: #71809b;
+}
+
+.weai-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.weai-suggestion {
+    border: 1px solid #e0e4f0;
+    border-radius: 30px;
+    padding: 7px 10px;
+    background: #fff;
+    color: #5645b8;
+    font-size: 10px;
+    text-align: left;
+}
+
+.weai-suggestion:hover,
+.weai-suggestion:focus-visible {
+    border-color: #b9b0ed;
+    background: #f6f4ff;
+}
+
+.weai-composer {
+    display: flex;
+    align-items: flex-end;
+    gap: 9px;
+    padding: 12px 14px 14px;
+    border-top: 1px solid #e9edf5;
+    background: #fff;
+}
+
+.weai-input {
+    min-height: 43px;
+    max-height: 120px;
+    flex: 1;
+    resize: vertical;
+    border: 1px solid #dce2ed;
+    border-radius: 12px;
+    padding: 11px 12px;
+    outline: 0;
+    background: #fbfcff;
+    color: #15223b;
+    font: inherit;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.weai-input:focus {
+    border-color: #8272e5;
+    box-shadow: 0 0 0 3px rgb(112 72 232 / 12%);
+}
+
+.weai-input:disabled {
+    opacity: .72;
+}
+
+.weai-send {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex: none;
+    place-items: center;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #7048e8, #3d72e4);
+    box-shadow: 0 6px 16px rgb(83 86 210 / 20%);
+    color: #fff;
+    font-size: 17px;
+}
+
+.weai-send:disabled {
+    cursor: wait;
+    opacity: .55;
+}
+
+.weai-panel :focus-visible,
+.weai-toolbar-button:focus-visible,
+.weai-launcher:focus-visible {
+    outline: 3px solid #8f7deb;
+    outline-offset: 2px;
+}
+
+@media (max-width: 650px) {
+    .weai-panel {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .weai-header {
+        padding-top: max(14px, env(safe-area-inset-top));
+    }
+
+    .weai-composer {
+        padding-bottom: max(14px, env(safe-area-inset-bottom));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .weai-panel.open {
+        animation: none;
+    }
+}
