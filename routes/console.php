@@ -3,5 +3,5 @@
 use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('inspire', function () {
-    $this->comment('Build something great.');
+    $this->comment('CONECTING PEOPLE WORLD WIDE');
 })->purpose('Display an inspiring quote');

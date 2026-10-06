@@ -1,12 +1,12 @@
 {
-    "name": "feez101/wetalk",
+    "name": "wetalk/community-platform",
     "type": "project",
-    "description": "Wetalk messaging app with WeAi question answering",
+    "description": "WeTalk community communication platform",
     "keywords": ["laravel", "chat", "weai"],
-    "license": "MIT",
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^12.0"
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.5"

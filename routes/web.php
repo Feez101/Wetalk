@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\WeAiChatController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'chat')->name('chat');
-Route::post('/chat', WeAiChatController::class)
-    ->middleware('throttle:10,1')
-    ->name('chat.send');
+Route::view('/', 'home')->name('home');
+Route::view('/dashboard', 'dashboard')->name('dashboard');
+Route::redirect('/dashboard.html', '/dashboard');
+Route::redirect('/chat', '/dashboard');
+Route::post('/weai/chat', [\App\Http\Controllers\WeAiChatController::class, 'store'])->middleware('throttle:10,1')->name('weai.chat');
+Route::post('/chat', \App\Http\Controllers\WeAiChatController::class)->middleware('throttle:10,1')->name('chat.send');
