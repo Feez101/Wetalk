@@ -4,4 +4,4 @@ use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('inspire', function () {
     $this->comment('CONECTING PEOPLE WORLD WIDE');
-});
+})->purpose('Display an inspiring quote');

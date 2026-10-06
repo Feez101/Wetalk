@@ -19,6 +19,8 @@ WeTalk is a Laravel 12 community messaging application with a responsive dashboa
 
 `.env` is excluded from Git. Keep the example key value blank, and do not commit your local environment file. If an API key is ever shared or exposed, revoke it immediately and replace it with a new key.
 
+To use the database-backed API, create the SQLite file at `database/database.sqlite`, then run `php artisan migrate`.
+
 ## WEAI
 
 Open WEAI from **Ask WEAI** in the dashboard navigation or the WEAI button above a conversation. The browser sends the conversation to Laravel using a same-origin, CSRF-protected request. Laravel validates and rate-limits requests, calls OpenAI using the server-side `OPENAI_API_KEY`, and returns the answer. The secret is not sent to the browser or logged. If the server key is missing or the AI service is unavailable, the dashboard displays an error without exposing provider details.
@@ -32,8 +34,12 @@ WEAI is a general-purpose assistant; it does not have access to private WeTalk c
 - `resources/views/dashboard.blade.php`: dashboard
 - `public/css/wetalk.css`: homepage styling
 - `public/css/weai.css` and `public/js/weai.js`: WEAI interface
-- `app/Http/Controllers/WeaiChatController.php`: validated server-side OpenAI chat endpoint
+- `app/Http/Controllers/WeAiChatController.php`: validated server-side OpenAI chat endpoint
 - `config/services.php`: server-side OpenAI environment settings
 - `database/migrations`: initial Laravel data model
 
 The archive includes starter authentication, community, channel, and message APIs. The dashboard's community data remains a browser-side demo; WEAI does not read or save those messages.
+
+## Tests
+
+Run the focused WEAI feature tests with `php artisan test --filter=WeAiChatTest`.
